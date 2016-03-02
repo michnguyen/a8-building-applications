@@ -2,7 +2,7 @@
 title: "Submission"
 output: html_document
 ---
-Before submitting your assignment, please create a `Readme.md` file **in your repository** that **contains a link** to your shinyapps.io project. Also, please answer the following questions (submit the URL of your repo as your assignment):
+Having problems with Shiny.ios. It is poping up error. Couldn't get the link :( 
 
 ##### 1. Did you receive any help from others (classmates, etc)? If so, please list who.
 
@@ -19,4 +19,5 @@ Before submitting your assignment, please create a `Readme.md` file **in your re
 ##### 4. Did you encounter any problems in this challenge we should warn students about in the future? How can we make the challenge better?
 
 > Figuring out how to use the widgets to connect with the visual representation
+
 

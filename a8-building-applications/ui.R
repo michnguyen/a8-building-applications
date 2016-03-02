@@ -3,19 +3,27 @@ library(shiny)
 library(plotly)
 library(dplyr)
 
-shinyUI(fluidPage(          
-  # Creating a title
-  titlePanel("Iris Species"),
+shinyUI(fluidPage( 
   
+  tabPanel('Bar Chart',
+  # Creating a title
+    titlePanel("Width Measurement"),
+    
+    sidebarLayout(position = "right",
+                  
     # Side panel for controls
-    sidebarPanel(
-      sliderInput("slider", 
-       label = h3("Slider Range"), 
-       min = min(iris$Sepal.Width), 
-       max = max(iris$Sepal.Width),
-       value = c(min(iris$Sepal.Width), max(iris$Sepal.Width)))),
-       
-    # Main panel: Display plotly map
-    mainPanel(plotlyOutput('chart'), 
-              textOutput("text1"))
-  ))
+        sidebarPanel(
+          radioButtons("flower", 
+              label = h4("Select a flower part."),
+              choices = list("Sepal Width" = 'Sepal.Width', 
+                             "Petal Width" = 'Petal.Width')),
+          
+          br(),
+          
+          selectInput("select",
+              label = list(h4("Select a type of visualization."), h5("The bar graph will show the max width value instead of displaying all the values.")), 
+              choices = list("Box" = 'box', 
+                              "Bar" = 'bar'))),
+      
+    mainPanel(plotlyOutput('chart'))
+))))

@@ -9,18 +9,17 @@ shinyServer(function(input, output) {
   output$chart <- renderPlotly({
     
     plot_ly(iris, 
-            x = Sepal.Width, 
-            y = Petal.Width,
-            mode = "markers",
-            color = Species,
-            size = (data$Sepal.Width - data$Petal.Width),
-            opacity = Sepal.Width
+            x = Species, 
+            y = eval(parse(text = input$flower)),
+            color = "pink",
+            type = input$select,
+            opacity = 0.6
     ) %>%
-    layout(xaxis = list(title = "Sepal Width"), 
-           yaxis = list(title = "Petal Width"),
-           title = "The Petal Width VS. Sepal Width of Flower"
+    layout(xaxis = list(title = "Species"), 
+           yaxis = list(title = "Width"),
+           title = "The Petal VS. Sepal Width of Three Species of Flower"
     ) %>%
     
-      return()
+    return()
   })
 })
